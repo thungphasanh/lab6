@@ -1,0 +1,39 @@
+<h3>Thêm danh mục sản phẩm</h3>
+<a href="/categories">Danh mục sản phẩm</a>
+<form action="" #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+  <div class="form-group mt-3">
+    <label for="name">Tên danh mục</label>
+    <input
+      type="text"
+      class="form-control"
+      name="name"
+      ngModel
+      #name="ngModel"
+      required
+    />
+    <div
+      class="text-danger"
+      *ngIf="name.invalid && (name.dirty || name.touched)"
+    >
+      Vui lòng nhập tên
+    </div>
+    <label for="name">số lượng</label>
+    <input
+      type="text"
+      class="form-control"
+      name="capacity"
+      ngModel
+      #capacity="ngModel"
+      required
+    />
+    <div
+      class="text-danger"
+      *ngIf="capacity.invalid && (capacity.dirty || capacity.touched)"
+    >
+      Vui lòng số lượng của danh mục
+    </div>
+  </div>
+  <div class="form-group mt-3">
+    <button type="submit" class="btn btn-primary">Thêm danh mục</button>
+  </div>
+</form>

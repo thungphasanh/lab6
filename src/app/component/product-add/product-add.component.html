@@ -1,0 +1,54 @@
+<h3>Thêm sản phẩm</h3>
+<a href="/products">Danh mục sản phẩm</a>
+<form action="" #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+  <div class="form-group mt-3">
+    <label for="name">Tên sản phẩm</label>
+    <input
+      type="text"
+      class="form-control"
+      name="title"
+      ngModel
+      #title="ngModel"
+      required
+    />
+    <div
+      class="text-danger"
+      *ngIf="title.invalid && (title.dirty || title.touched)"
+    >
+      Vui lòng nhập tên
+    </div>
+    <label for="name">giá sản phẩm</label>
+    <input
+      type="text"
+      class="form-control"
+      name="price"
+      ngModel
+      #price="ngModel"
+      required
+    />
+    <div
+      class="text-danger"
+      *ngIf="price.invalid && (price.dirty || price.touched)"
+    >
+      Vui lòng nhập giá sản phẩm
+    </div>
+    <label for="name">hình ảnh sản phẩm</label>
+    <input
+      type="text"
+      class="form-control"
+      name="image"
+      ngModel
+      #image="ngModel"
+      required
+    />
+    <div
+      class="text-danger"
+      *ngIf="image.invalid && (image.dirty || image.touched)"
+    >
+      Vui lòng nhập hình ảnh
+    </div>
+  </div>
+  <div class="form-group mt-3">
+    <button type="submit" class="btn btn-primary">Thêm danh mục</button>
+  </div>
+</form>

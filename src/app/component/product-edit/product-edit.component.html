@@ -1,0 +1,63 @@
+<h3>Sửa sản phẩm</h3>
+<a routerLink="/categories">danh sách sản phẩm</a>
+<form action="" #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+  <div class="form-group mt-3">
+    <input
+      type="text"
+      name="title"
+      ngModel
+      #title="ngModel"
+      [(ngModel)]="product.title"
+      required
+      placeholder="Nhập Tên"
+      class="form-control"
+    />
+    <div
+      class="text-danger"
+      *ngIf="title.invalid && (title.dirty || title.touched)"
+    >
+      Vui lòng nhập tên danh mục
+    </div>
+  </div>
+
+  <div class="form-group mt-3">
+    <input
+      type="text"
+      name="price"
+      ngModel
+      #price="ngModel"
+      [(ngModel)]="product.price"
+      required
+      placeholder="Nhập giá tiền"
+      class="form-control"
+    />
+  </div>
+  <div
+    class="text-danger"
+    *ngIf="price.invalid && (price.dirty || price.touched)"
+  >
+    Vui lòng nhập giá tiền sản phẩm
+  </div>
+  <div class="form-group mt-3">
+    <input
+      type="text"
+      name="image"
+      ngModel
+      #image="ngModel"
+      [(ngModel)]="product.image"
+      required
+      placeholder="Nhập hình ảnh"
+      class="form-control"
+    />
+    <div
+      class="text-danger"
+      *ngIf="image.invalid && (image.dirty || image.touched)"
+    >
+      Vui lòng nhập hình ảnh
+    </div>
+  </div>
+
+  <div class="form-group mt-3">
+    <button type="submit" class="btn btn-primary">Sửa Danh mục</button>
+  </div>
+</form>
